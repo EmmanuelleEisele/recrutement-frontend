@@ -9,40 +9,33 @@ import Link from "next/link";
 
 export default function Home() {
   const [passwordVisible, setPasswordVisible] = useState(false);
-   
-  function showConnection(){
-    
-    return (
-      
-      <form>
-        <Input type="email" placeholder="Email Admin" style={{ display: 'flex', alignItems: 'center', flexDirection: 'column' }}/>
+
+  return (
+    <div className={styles.page}>
+      <header>
+
+        <h1 style={{textAlign: 'center', marginBottom:'0.5rem'}}>Recrutement.com</h1>
+
+        <form style={{ display: 'flex', alignItems: 'center', flexDirection: 'column'}}>
+        <Input type="email" placeholder="Email Admin" style={{ width: '13.5rem', marginBottom: '0.5rem'
+        }}/>
 
         <Space direction="horizontal">
          <Input.Password
+         style={{ width: '13.5rem', marginBottom: '0.5rem'
+         }}
           placeholder="Mot de passe"
           visibilityToggle={{ visible: passwordVisible, onVisibleChange: setPasswordVisible }}
          />
         </Space>
         <Button>se connecter</Button>
       </form>
-      
-    )
-   }
-
-  return (
-    <div className={styles.page}>
-      <header>
-
-        <h1 style={{textAlign: 'center'}}>Recrutement.com</h1>
-         <Button  onClick={showConnection}>
-         se connecter
-         </Button>
         
       </header>
 
       <main className={styles.main}>
         <h1>Pour remplire ta candidature</h1>
-        <Button type="primary">Clique ici</Button>
+        <Button type="primary" href="/candidature">Clique ici</Button>
       </main>
       <footer >
       </footer>
