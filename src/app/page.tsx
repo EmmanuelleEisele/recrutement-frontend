@@ -1,36 +1,69 @@
 'use client'
-import Image from "next/image";
 import styles from "./page.module.css";
-import {Breadcrumb, Button, Form, Input, Space} from 'antd';
+import { Button, Form, Input, message} from 'antd';
 import '@ant-design/v5-patch-for-react-19';
-import { EyeInvisibleOutlined, EyeTwoTone, HomeOutlined, UserOutlined } from '@ant-design/icons';
+import { LockOutlined, UserOutlined } from '@ant-design/icons';
 import { useState } from "react";
-import Link from "next/link";
+
+interface IlogIn{
+  username: string;
+  password: string | number;
+}
 
 export default function Home() {
-  const [passwordVisible, setPasswordVisible] = useState(false);
+  const [isConnected, setIsConnected] = useState(false);
+  const [error, setError] = useState<null | string>(null);
 
+  const onFinish = ({username , password}: IlogIn) => {
+    console.log('Received values of form: ', );
+    const userName = username;
+    const userPwd = password;
+
+    if( userName === 'admin' && userPwd === 'adminpwd'){
+      setIsConnected(true);
+      setError('')
+   }
+   else{
+    setError('Veuillez entrer un pseudo et/ou mot de passe correct !')  
+    return 
+  }
+  };
   return (
     <div className={styles.page}>
       <header>
 
-        <h1 style={{textAlign: 'center', marginBottom:'0.5rem'}}>Recrutement.com</h1>
+        <h1 style={{textAlign: 'center', marginBottom:'0.5rem', marginTop:'2rem'}}>Recrutement.com</h1>
 
-        <form style={{ display: 'flex', alignItems: 'center', flexDirection: 'column'}}>
-        <Input type="email" placeholder="Email Admin" style={{ width: '13.5rem', marginBottom: '0.5rem'
-        }}/>
+        {isConnected ?  <Button href="/candidats" style={{position: 'absolute', top: '0.5rem', left:'0.5rem'}}>Candidats</Button> : <></> }
 
-        <Space direction="horizontal">
-         <Input.Password
-         style={{ width: '13.5rem', marginBottom: '0.5rem'
-         }}
-          placeholder="Mot de passe"
-          visibilityToggle={{ visible: passwordVisible, onVisibleChange: setPasswordVisible }}
-         />
-        </Space>
-        <Button>se connecter</Button>
-      </form>
-        
+        <Form
+      name="login"
+      initialValues={{ remember: true }}
+      style={{ maxWidth: 360 }}
+      onFinish={onFinish}
+      >
+      <Form.Item
+        name="username"
+        rules={[{ required: true, message: 'Please input your Username!' }]}
+      >
+        <Input prefix={<UserOutlined />} placeholder="Username" />
+      </Form.Item>
+      <Form.Item
+        name="password"
+        rules={[{ required: true, message: 'Please input your Password!' }]}
+      >
+        <Input prefix={<LockOutlined />} type="password" placeholder="Password" />
+      </Form.Item>
+
+       <Form.Item>
+        <Button block type="primary" htmlType="submit" onClick={()=>onFinish}>
+          Log in
+        </Button>
+        {error && <p style={{color:'red'}}>{error}</p> }
+
+      </Form.Item>
+    </Form>
+
       </header>
 
       <main className={styles.main}>
