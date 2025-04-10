@@ -1,0 +1,17 @@
+.title-candidat{
+    text-align: center;
+    margin-bottom: 2rem;
+    margin-top: 0.5rem;
+}
+.card{
+    width: 100%;
+    display: flex;
+    margin: auto;
+}
+.card-title{
+    margin: 0.5rem;
+}
+.card-description{
+    margin-left: 0.5rem;
+}
+
