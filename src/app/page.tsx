@@ -57,7 +57,7 @@ export default function Home() {
 
        <Form.Item>
         <Button block type="primary" htmlType="submit" onClick={()=>onFinish}>
-          Log in
+          Connexion
         </Button>
         {error && <p style={{color:'red'}}>{error}</p> }
 

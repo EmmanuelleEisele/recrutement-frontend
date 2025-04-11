@@ -33,6 +33,7 @@ export default async function CandidatPage({ params }: { params: { id: number } 
         <p className="card-description">{candidat.motivation}</p>
       
       </Card>
+      <Button href="/candidats" style={{position: 'absolute', top: '0.5rem', left:'7rem'}}>Candidats</Button>
       <Button href='/' style={{position: 'absolute', top: '0.5rem', left:'0.5rem'}}>Accueil</Button>
     </>
   );
