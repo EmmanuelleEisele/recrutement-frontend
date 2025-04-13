@@ -4,6 +4,8 @@ import { Button, Form, Input, message} from 'antd';
 import '@ant-design/v5-patch-for-react-19';
 import { LockOutlined, UserOutlined } from '@ant-design/icons';
 import { useState } from "react";
+import i18n from '../../i18n';
+import { useTranslation } from 'react-i18next';
 
 interface IlogIn{
   username: string;
@@ -11,6 +13,7 @@ interface IlogIn{
 }
 
 export default function Home() {
+  const {t} = useTranslation();
   const [isConnected, setIsConnected] = useState(false);
   const [error, setError] = useState<null | string>(null);
 
@@ -32,8 +35,10 @@ export default function Home() {
     <div className={styles.page}>
       <header>
 
-        <h1 style={{textAlign: 'center', marginBottom:'0.5rem', marginTop:'2rem'}}>Recrutement.com</h1>
+        <h1 style={{textAlign: 'center', marginBottom:'0.5rem', marginTop:'2rem'}}>{t('greeting')}Recrutement.com</h1>
 
+          <Button style={{position: 'absolute', top: '2.5rem', left:'0.5rem'}} onClick={() => i18n.changeLanguage('en')}>English</Button>
+          <Button style={{position: 'absolute', top: '5rem', left:'0.5rem'}}onClick={() => i18n.changeLanguage('fr')}>Français</Button>
         {isConnected ?  <Button href="/candidats" style={{position: 'absolute', top: '0.5rem', left:'0.5rem'}}>Candidats</Button> : <></> }
 
         <Form
@@ -44,15 +49,15 @@ export default function Home() {
       >
       <Form.Item
         name="username"
-        rules={[{ required: true, message: 'Please input your Username!' }]}
+        rules={[{ required: true, message: 'Merci de renter votre Pseudo!' }]}
       >
         <Input prefix={<UserOutlined />} placeholder="Username" />
       </Form.Item>
       <Form.Item
         name="password"
-        rules={[{ required: true, message: 'Please input your Password!' }]}
+        rules={[{ required: true, message: 'Merci de renter votre mot de passe!' }]}
       >
-        <Input prefix={<LockOutlined />} type="password" placeholder="Password" />
+        <Input prefix={<LockOutlined />} type="password" placeholder="Mot de passe" />
       </Form.Item>
 
        <Form.Item>

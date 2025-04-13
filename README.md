@@ -1,36 +1,62 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## Getting Started
+### Plateforme de Recrutement – Frontend App
 
-First, run the development server:
+Ce projet est une application frontend développée avec **Next.js 14**, intégrant le système de routing **App Router**, l'UI **Ant Design**, et la gestion d'état via **Redux Toolkit** (en cours). Il s'agit d'un projet professionnel réalisé dans le cadre d'une évaluation pour un stage en développement frontend.
+
+---
+
+### Stack technique
+
+- **Next.js 14** avec App Router
+- **Ant Design** – UI moderne et réactive
+- **Redux Toolkit** – Gestion d'état globale
+- **next-i18next** – Internationalisation multi-langue
+- **Backend fictif pour tests**
+- **Visual Studio Code**
+
+---
+
+### Installation
+
+1. **Cloner le projet**
+
+   ```bash
+   git clone git@github.com:EmmanuelleEisele/recrutement-frontend.git
+   cd recrutement-frontend
+
+2.**Installer les dépendances**
+
+```bash
+npm init
+npm install
+```
+
+3.**Activer le serveur**
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Acceder à l'app: [http://localhost:3000] dans le navigateur pour voir le résultat.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Fonctionnalités principales
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+-Page candidat : formulaire pour postuler
 
-## Learn More
+-Page recruteur : liste des candidats
 
-To learn more about Next.js, take a look at the following resources:
+-Détail d’un candidat : affichage d’une fiche individuelle
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+-Thème harmonisé avec Ant Design
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+-Structure modulaire avec App Router
 
-## Deploy on Vercel
+### UML
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Le diagramme de conception UML est disponible via Draw.io à la racine de l'app dossier UML/uml.drawio.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Auteur
+
+Emmanuelle Eiselé
+Developpeuse front-end et back-end en formation.
