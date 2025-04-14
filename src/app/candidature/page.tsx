@@ -3,7 +3,7 @@ import React from 'react';
 import { Button, Form, Input, InputNumber } from 'antd';
 import i18n from '../../../i18n';
 import { useTranslation } from 'react-i18next';
-
+import '../headerBtn.css'
 
 export default function formPage(){
   const {t} = useTranslation();
@@ -28,11 +28,11 @@ export default function formPage(){
  
     return(
      <>
+      <Button href='/' style={{position: 'absolute', top: '0.5rem', left:'0.5rem'}}>{t('hpRedirectBtn')}</Button>
+      <Button className='lng-btn-en' onClick={() => i18n.changeLanguage('en')}>English</Button>
+      <Button className='lng-btn-fr'onClick={() => i18n.changeLanguage('fr')}>Français</Button>
      <h1 style={{marginBottom: '1rem', textAlign: 'center'}}>{t('candidaturePageTitle')}</h1>
 
-      <Button href='/' style={{position: 'absolute', top: '0.5rem', left:'0.5rem'}}>Accueil</Button>
-      <Button style={{position: 'absolute', top: '0.5rem', right:'0.5rem'}} onClick={() => i18n.changeLanguage('en')}>English</Button>
-      <Button style={{position: 'absolute', top: '0.5rem', right:'5.5rem'}}onClick={() => i18n.changeLanguage('fr')}>Français</Button>
 
           <Form
     {...layout}

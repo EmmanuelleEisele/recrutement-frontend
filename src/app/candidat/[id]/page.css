@@ -14,3 +14,8 @@
 .card-description{
     margin-left: 0.5rem;
 }
+.candidats-btn{
+    position: absolute;
+    top: 0.5rem;
+    right:9rem;
+}

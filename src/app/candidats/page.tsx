@@ -4,6 +4,8 @@ import Link from "next/link";
 import { candidats } from "../candidatsList";
 import i18n from "../../../i18n";
 import { useTranslation } from 'react-i18next';
+import './candidatsPage.css'
+import '../headerBtn.css'
 
 export default function CandidatsPage() {
   const {t} = useTranslation();
@@ -11,14 +13,14 @@ export default function CandidatsPage() {
   console.log(i18n.language)
     return(
     <div>
-    <h1 style={{textAlign:'center'}}>{t('candidatsList')}</h1>
-    <Button href='/' style={{position: 'absolute', top: '0.5rem', left:'0.5rem'}}>{t('hpRedirectBtn')}</Button>
-    <Button style={{position: 'absolute', top: '0.5rem', right:'0.5rem'}} onClick={() => i18n.changeLanguage('en')}>English</Button>
-      <Button style={{position: 'absolute', top: '0.5rem', right:'5.5rem'}}onClick={() => i18n.changeLanguage('fr')}>Français</Button>
+    <Button className="lng-btn-en" onClick={() => i18n.changeLanguage('en')}>English</Button>
+    <Button className="lng-btn-fr" onClick={() => i18n.changeLanguage('fr')}>Français</Button>
+    <Button className="redirect-hp-btn" href="/">{t('hpRedirectBtn')}</Button>
 
+    <h1 style={{textAlign:'center'}}>{t('candidatsList')}</h1>
     
     {candidats.map((candidat)=>{
-      return <Link  href={`/candidat/${candidat.id}`} key={candidat.id} style={{fontWeight:'bold', margin: '1rem 0.5rem', display:'flex', justifyContent:'center'}}>{candidat.name}</Link>
+      return <Link className="candidats-link"  href={`/candidat/${candidat.id}`} key={candidat.id} >{candidat.name}</Link>
       })}
     </div>
 

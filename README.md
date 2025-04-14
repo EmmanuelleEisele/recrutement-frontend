@@ -53,6 +53,11 @@ npm run dev
 
 Acceder à l'app: [http://localhost:3000] dans le navigateur pour voir le résultat.
 
+Pour accèder aux candidats se connecter en tant qu'administateur:
+
+Pseudo : ' admin'
+Mot de passe : 'adminpwd'
+
 ### Fonctionnalités principales
 
 -Page candidat : formulaire pour postuler

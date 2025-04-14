@@ -6,6 +6,8 @@ import { LockOutlined, UserOutlined } from '@ant-design/icons';
 import { useState } from "react";
 import i18n from '../../i18n';
 import { useTranslation } from 'react-i18next';
+import './headerBtn.css'
+import './homePage.css'
 
 interface IlogIn{
   username: string;
@@ -35,17 +37,17 @@ export default function Home() {
     <div className={styles.page}>
       <header>
 
-        <h1 style={{textAlign: 'center', marginBottom:'0.5rem', marginTop:'2rem'}}>{t('greeting')}Recrutement.com</h1>
+        <h1 className="header-title">{t('greeting')}Recrutement.com</h1>
 
         <Button style={{position: 'absolute', top: '0.5rem', right:'0.5rem'}} onClick={() => i18n.changeLanguage('en')}>English</Button>
-        <Button style={{position: 'absolute', top: '0.5rem', right:'5.5rem'}}onClick={() => i18n.changeLanguage('fr')}>Français</Button>
+        <Button style={{position: 'absolute', top: '0.5rem', right:'6rem'}}onClick={() => i18n.changeLanguage('fr')}>Français</Button>
         
         {isConnected ?  <Button href="/candidats" style={{position: 'absolute', top: '0.5rem', left:'0.5rem'}}>Candidats</Button> : <></> }
 
         <Form
       name="login"
       initialValues={{ remember: true }}
-      style={{ maxWidth: 360 }}
+      style={{ maxWidth: 550 }}
       onFinish={onFinish}
       >
       <Form.Item

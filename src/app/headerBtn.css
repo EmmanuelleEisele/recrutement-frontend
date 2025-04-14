@@ -1,0 +1,16 @@
+.lng-btn-en{
+    position: absolute;
+    top:0.5rem;
+    right: 0; 
+    left:80%;
+}
+.lng-btn-fr{
+    position: absolute;
+    top:0.5rem;
+    left:82%;
+}
+.redirect-hp-btn{
+    position: absolute;
+    top: 0.5rem;
+    right:10rem;
+}
