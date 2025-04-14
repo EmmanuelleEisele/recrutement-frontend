@@ -1,7 +1,7 @@
 
 ### Plateforme de Recrutement – Frontend App
 
-Ce projet est une application frontend développée avec **Next.js 14**, intégrant le système de routing **App Router**, l'UI **Ant Design**, et la gestion d'état via **Redux Toolkit** (en cours). Il s'agit d'un projet professionnel réalisé dans le cadre d'une évaluation pour un stage en développement frontend.
+Ce projet est une application frontend développée avec **Next.js 14**, intégrant le système de routing **App Router**, l'UI **Ant Design**, et la gestion d'état via **Redux Toolkit** . Il s'agit d'un projet professionnel réalisé dans le cadre d'une évaluation pour un stage en développement frontend.
 
 ---
 
@@ -16,13 +16,26 @@ Ce projet est une application frontend développée avec **Next.js 14**, intégr
 
 ---
 
+### Context de développement du projet
+
+Dans le cadre de ce projet d'application front-end, j'ai découvert et appris à utiliser plusieurs outils et technologies tels que Next.js avec l'App Router, Ant Design (AntD), i18next pour la gestion multilingue, ainsi que Redux pour la gestion des états.
+
+Étant encore en formation, je n’ai pas eu le temps d’implémenter Redux de manière approfondie. J’ai tout de même pris le soin de l’installer et de me documenter dessus. J’ai compris, par exemple, que Redux m’aurait permis de centraliser certains états globaux de l’application, comme la langue active, afin de les partager facilement entre les différentes pages.
+
+Concernant i18next, j’ai beaucoup apprécié son intégration et son fonctionnement. Travailler sur la traduction de l’interface a été particulièrement enrichissant.
+
+Ce projet m’a permis d’explorer des outils modernes et puissants du développement front-end. Même si je n’ai fait qu’effleurer certaines notions par manque de temps, cette expérience m’a donné envie de continuer à approfondir ces technologies et à progresser dans ce domaine.
+
+---
+
 ### Installation
 
 1. **Cloner le projet**
 
-   ```bash
-   git clone git@github.com:EmmanuelleEisele/recrutement-frontend.git
-   cd recrutement-frontend
+ ```bash
+ git clone git@github.com:EmmanuelleEisele/recrutement-frontend.git
+ cd recrutement-frontend
+ ```
 
 2.**Installer les dépendances**
 

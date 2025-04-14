@@ -1,32 +1,39 @@
 'use client'
 import React from 'react';
 import { Button, Form, Input, InputNumber } from 'antd';
+import i18n from '../../../i18n';
+import { useTranslation } from 'react-i18next';
 
-const layout = {
-  labelCol: { span: 8 },
-  wrapperCol: { span: 16 },
-};
-
-const validateMessages = {
-  required: '${label} is required!',
-  types: {
-    email: '${label} is not a valid email!',
-    number: '${label} is not a valid number!',
-  },
-  number: {
-    range: '${label} must be between ${min} and ${max}',
-  },
-};
-
-const onFinish = (values: string & number) => {
-  console.log(values);
-};
 
 export default function formPage(){
+  const {t} = useTranslation();
+  
+  const layout = {
+    labelCol: { span: 8 },
+    wrapperCol: { span: 16 },
+  };
+  
+  const validateMessages = {
+
+    required: t('validateMsgRequired'),
+    types: {
+      email: t('validateMsgEmail')
+    }
+  };
+  
+  const onFinish = (values: string & number) => {
+    console.log(values);
+  };
+  
+ 
     return(
      <>
-     <h1 style={{marginBottom: '1rem', textAlign: 'center'}}>Formulaire de candidature</h1>
+     <h1 style={{marginBottom: '1rem', textAlign: 'center'}}>{t('candidaturePageTitle')}</h1>
+
       <Button href='/' style={{position: 'absolute', top: '0.5rem', left:'0.5rem'}}>Accueil</Button>
+      <Button style={{position: 'absolute', top: '0.5rem', right:'0.5rem'}} onClick={() => i18n.changeLanguage('en')}>English</Button>
+      <Button style={{position: 'absolute', top: '0.5rem', right:'5.5rem'}}onClick={() => i18n.changeLanguage('fr')}>Français</Button>
+
           <Form
     {...layout}
     name="nest-messages"
@@ -34,8 +41,8 @@ export default function formPage(){
     style={{ width: '80%' , display: 'flex', justifyContent:'center', flexDirection:'column'}}
     validateMessages={validateMessages}
   >
-    <Form.Item name={['user', 'nom']} label="Nom" rules={[{ required: true }]}>
-      <Input placeholder='Nom Prénom'/>
+    <Form.Item name={['user', 'nom']} label= {t('formName')} rules={[{ required: true }]}>
+      <Input placeholder= {t('formNamePlaceholder')}/>
     </Form.Item>
     <Form.Item name={['user', 'email']} label="Email" rules={[{ type: 'email',required: true }]}>
       <Input placeholder='Email'/>
@@ -52,7 +59,7 @@ export default function formPage(){
 
     <Form.Item label={null}>
       <Button type="primary" htmlType="submit" >
-        Envoyer
+        {t('formBtn')}
       </Button>
     </Form.Item>
   </Form>

@@ -1,3 +1,23 @@
 {
-    "greeting": "Welcome to "
+    "greeting": "Welcome to ",
+    "formAdmin": "Enter your username!",
+    "formAdminpwd": "Enter your password!",
+    "formAdminPlaceholderName": "Username",
+    "formAdminPlaceholderpwd": "Password",
+    "error": "Enter a correct username and/or password!",
+    "hpTitle": "To submit your application",
+    "hpButton": "Click here",
+
+    "candidaturePageTitle": "Application form",
+    "hpRedirectBtn": "Homepage",
+    "validateMsgRequired":"is required!",
+    "validateMsgEmail":"${label} is not a valid email!",
+    "formName":"Nom",
+    "formNamePlaceholder":"Lastname Firstname",
+    "formBtn":"Submit",
+
+    "candidatsList": "Candidats List",
+
+    "candidatTitle": "Candidat file N°"
+
   }

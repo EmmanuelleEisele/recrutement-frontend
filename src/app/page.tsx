@@ -18,7 +18,7 @@ export default function Home() {
   const [error, setError] = useState<null | string>(null);
 
   const onFinish = ({username , password}: IlogIn) => {
-    console.log('Received values of form: ', );
+    // console.log('Received values of form: ', );
     const userName = username;
     const userPwd = password;
 
@@ -27,7 +27,7 @@ export default function Home() {
       setError('')
    }
    else{
-    setError('Veuillez entrer un pseudo et/ou mot de passe correct !')  
+    setError(t('error'))  
     return 
   }
   };
@@ -37,8 +37,9 @@ export default function Home() {
 
         <h1 style={{textAlign: 'center', marginBottom:'0.5rem', marginTop:'2rem'}}>{t('greeting')}Recrutement.com</h1>
 
-          <Button style={{position: 'absolute', top: '2.5rem', left:'0.5rem'}} onClick={() => i18n.changeLanguage('en')}>English</Button>
-          <Button style={{position: 'absolute', top: '5rem', left:'0.5rem'}}onClick={() => i18n.changeLanguage('fr')}>Français</Button>
+        <Button style={{position: 'absolute', top: '0.5rem', right:'0.5rem'}} onClick={() => i18n.changeLanguage('en')}>English</Button>
+        <Button style={{position: 'absolute', top: '0.5rem', right:'5.5rem'}}onClick={() => i18n.changeLanguage('fr')}>Français</Button>
+        
         {isConnected ?  <Button href="/candidats" style={{position: 'absolute', top: '0.5rem', left:'0.5rem'}}>Candidats</Button> : <></> }
 
         <Form
@@ -49,15 +50,15 @@ export default function Home() {
       >
       <Form.Item
         name="username"
-        rules={[{ required: true, message: 'Merci de renter votre Pseudo!' }]}
+        rules={[{ required: true, message: t('formAdmin') }]}
       >
-        <Input prefix={<UserOutlined />} placeholder="Username" />
+        <Input prefix={<UserOutlined />} placeholder={t('formAdminPlaceholderName')} />
       </Form.Item>
       <Form.Item
         name="password"
-        rules={[{ required: true, message: 'Merci de renter votre mot de passe!' }]}
+        rules={[{ required: true, message: t('formAdminpwd')}]}
       >
-        <Input prefix={<LockOutlined />} type="password" placeholder="Mot de passe" />
+        <Input prefix={<LockOutlined />} type="password" placeholder={t('formAdminPlaceholderpwd')} />
       </Form.Item>
 
        <Form.Item>
@@ -72,8 +73,8 @@ export default function Home() {
       </header>
 
       <main className={styles.main}>
-        <h1>Pour remplire ta candidature</h1>
-        <Button type="primary" href="/candidature">Clique ici</Button>
+        <h1>{t('hpTitle')}</h1>
+        <Button type="primary" href="/candidature">{t('hpButton')}</Button>
       </main>
       <footer >
       </footer>

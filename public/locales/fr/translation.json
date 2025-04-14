@@ -1,3 +1,21 @@
 {
-    "greeting": "Bienvenue sur "
+    "greeting": "Bienvenue sur ",
+    "formAdmin": "Merci de renter votre Pseudo!",
+    "formAdminpwd": "Merci de renter votre mot de passe!",
+    "formAdminPlaceholderName": "Pseudo",
+    "formAdminPlaceholderpwd": "Mot de passe",
+    "error": "Veuillez entrer un pseudo et/ou mot de passe correct !",
+    "hpTitle": "Pour remplire ta candidature",
+    "hpButton": "Clique ici",
+
+    "candidaturePageTitle": "Formulaire de candidature",
+    "hpRedirectBtn": "Accueil",
+    "validateMsgRequired":"${label} est requis!",
+    "validateMsgEmail":"${label} n'est pas un email valide !",
+    "formName":"Nom",
+    "formNamePlaceholder":"Nom Prénom",
+    "formBtn":"Envoyer",
+    "candidatsList": "Liste des candidats",
+
+    "candidatTitle": "Fiche du candidat N°"
   }
